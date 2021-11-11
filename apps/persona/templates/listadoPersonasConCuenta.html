@@ -1,0 +1,24 @@
+{% extends "base/base.html" %}
+{% block titulo %}Personas con cuentas{% endblock %}
+{% block contenido %}
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}  <div class="message" role="status">{{ message }}</div>{% endif %}
+            {% if message.tags == 'error' %}  <div class="errors" role="alert">{{ message }}</div>{% endif %}
+        {% endfor %}
+    {% endif %}
+
+  <h2>Lista personas con cuenta</h2>
+    <table>
+        <tr>
+            <th>Dni</th>
+            <th>Numero Cuenta</th>
+        </tr>
+        {% for cuenta in cuentas %}
+            <tr>
+              <td>{{ cuenta.persona }}</td>
+              <td>{{ cuenta.numero_cuenta }}</td>
+            </tr>
+        {% endfor %}
+   </table>
+{% endblock %}
