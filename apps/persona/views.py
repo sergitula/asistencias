@@ -30,7 +30,6 @@ def registrarCuentaBancariaPersona(request):
                                                           'persona': Persona.objects.all(),
                                                           })
 
-
 @login_required
 def mostrarListado(request):
     return render(request, 'listadoPersonasConCuenta.html', {'cuentas': CuentaBancaria.objects.all(),  # devulve el listado de todas las cuentas
